@@ -553,6 +553,7 @@
           <h2 class="font-display font-300 text-4xl md:text-6xl tracking-[0.04em] text-ink">${p.title}</h2>
           <p class="font-kr text-lg text-ash mt-3">${p.kr}</p>
           ${awardHtml}
+          <div class="mt-6">${linkHtml}</div>
           <!-- 링크 스크린샷(assets/0N.jpg), 없으면 그라데이션+라벨 폴백 -->
           <div class="my-12 relative aspect-[16/9] w-full overflow-hidden bg-line/60" style="background-image:${THUMBS[PROJECTS.indexOf(p) % THUMBS.length]}">
             <span class="absolute inset-0 flex items-center justify-center label">${p.title}</span>
@@ -564,7 +565,6 @@
           <ul class="space-y-3 mb-12">${bulletsHtml}</ul>
           <h3 class="label mb-3">Tech Stack</h3>
           <p class="font-kr text-sm text-ash leading-relaxed">${p.stack}</p>
-          ${linkHtml}
         </div>`;
     }
 
