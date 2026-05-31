@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git -c user.name=yugangee -c user.email=dbruddl56@naver.com commit -q -m 'feat: rebuild portfolio as white-tone editorial single-page site *)"
+    ]
+  }
+}
