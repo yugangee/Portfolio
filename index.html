@@ -251,7 +251,7 @@
 
           <div class="reveal">
             <div class="label mb-4 border-b border-line pb-2">Tech Stack</div>
-            <div id="skills" class="flex flex-wrap gap-2"></div>
+            <div id="skills" class="divide-y divide-line"></div>
           </div>
         </div>
       </div>
@@ -500,7 +500,15 @@
     ];
 
     /* ---------- 기술 스택 ---------- */
-    const SKILLS = ['Next.js','React','React Native','TypeScript','JavaScript','Python','Node.js','FastAPI','Express','Tailwind CSS','AWS Lambda','DynamoDB','S3','EC2','Bedrock','Claude','Gemini','YOLO','OpenCV','PyTorch','RAG','MySQL'];
+    const STACK = [
+      ['Languages', 'TypeScript · JavaScript · Python'],
+      ['Frontend', 'React · Next.js · React Native · Tailwind CSS · Vite'],
+      ['Backend', 'Node.js · FastAPI · Express · Serverless Framework'],
+      ['Cloud / Infra', 'AWS (Lambda · EC2 · S3 · DynamoDB · Bedrock · CloudFront · API Gateway · Cognito) · SST · OpenNext'],
+      ['Database', 'DynamoDB · MySQL · ElasticSearch · Redis'],
+      ['AI / ML', 'Claude · Gemini · YOLO (v8·11) · OpenCV · PyTorch · EasyOCR · CLIP · EfficientNet · RAG (BM25 · FAISS) · Sentence-BERT'],
+      ['Tools', 'Git · GitHub · Notion · Roboflow · VS Code · satori / resvg'],
+    ];
 
     /* ---------- 프로젝트 썸네일 그라데이션 (사진 도착 전 플레이스홀더) ---------- */
     const THUMBS = [
@@ -544,7 +552,11 @@
 
     /* ---------- ABOUT 스킬 칩 ---------- */
     const skills = document.getElementById('skills');
-    skills.innerHTML = SKILLS.map((s) => `<span class="border border-line text-ink/80 text-sm px-3 py-1.5 rounded-full hover:border-ink hover:text-ink transition-colors">${s}</span>`).join('');
+    skills.innerHTML = STACK.map(([cat, items]) => `
+      <div class="grid grid-cols-1 sm:grid-cols-4 gap-1 sm:gap-4 py-3">
+        <div class="label sm:col-span-1">${cat}</div>
+        <div class="font-kr text-sm text-ink/80 sm:col-span-3 leading-relaxed">${items}</div>
+      </div>`).join('');
 
     /* ---------- Lenis 관성 스크롤 + ScrollTrigger 연동 ---------- */
     const lenis = new Lenis({ duration: 1.1, smoothWheel: true });
@@ -747,8 +759,8 @@
     });
 
     /* ---------- 스킬 칩 스태거 ---------- */
-    gsap.from('#skills span', {
-      opacity: 0, y: 16, duration: 0.6, stagger: 0.035, ease: 'power2.out',
+    gsap.from('#skills > div', {
+      opacity: 0, y: 16, duration: 0.6, stagger: 0.07, ease: 'power2.out',
       scrollTrigger: { trigger: '#skills', start: 'top 85%', once: true },
     });
 
