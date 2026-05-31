@@ -8,7 +8,13 @@
       "Bash(curl -s \"https://unpkg.com/lenis@1.1.14/dist/lenis.min.js\")",
       "Bash(node -e \"console.log\\('node', process.version\\)\")",
       "Bash(git -c user.name=yugangee -c user.email=dbruddl56@naver.com commit -q -m 'fix: keep Korean text on Pretendard by using it as display-font fallback *)",
-      "Bash(git -c user.name=yugangee -c user.email=dbruddl56@naver.com commit -q -m 'style: reduce hero video height from 100svh to 85svh *)"
+      "Bash(git -c user.name=yugangee -c user.email=dbruddl56@naver.com commit -q -m 'style: reduce hero video height from 100svh to 85svh *)",
+      "Bash(sips -s format jpeg -s formatOptions 88 IMG_3486.HEIC --out assets/profile.jpg)",
+      "Bash(sips -g pixelWidth -g pixelHeight assets/profile.jpg)",
+      "Bash(sips -Z 1800 assets/profile.jpg)",
+      "Bash(node /tmp/pwcheck/scrolltest.mjs)",
+      "Bash(node /tmp/pwcheck/dbg.mjs)",
+      "Bash(curl -s http://localhost:8000/index.html)"
     ]
   }
 }
