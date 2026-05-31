@@ -84,8 +84,8 @@
   .work-row:hover .wr-line { transform: scaleX(1); }
 
   /* ---------- WORK 호버 이미지 프리뷰 ---------- */
-  #work-preview { position: fixed; top:0; left:0; z-index:82; width: 22vw; max-width:300px; aspect-ratio: 4/5;
-                  pointer-events:none; opacity:0; overflow:hidden; border-radius:3px; will-change: transform, opacity;
+  #work-preview { position: fixed; top:0; left:0; z-index:82; width: 23vw; max-width:330px; aspect-ratio: 3/2;
+                  pointer-events:none; opacity:0; overflow:hidden; border-radius:12px; will-change: transform, opacity;
                   box-shadow: 0 30px 70px rgba(0,0,0,.20); transition: opacity .35s; }
   #work-preview.show { opacity:1; }
   #work-preview .pv { position:absolute; inset:0; background-size:cover; background-position:center; }
@@ -212,13 +212,6 @@
         </div>
 
         <div class="md:col-span-8 space-y-12">
-          <div class="reveal">
-            <div class="label mb-3">About</div>
-            <p class="font-display font-300 text-2xl md:text-4xl leading-[1.2] tracking-normal text-ink">
-              AI와 풀스택을 가로지르며, 데이터 수집부터 모델·프론트엔드·인프라까지<br class="hidden md:block" /> 직접 만들어 굴리는 신입 개발자.
-            </p>
-          </div>
-
           <div class="reveal grid sm:grid-cols-2 gap-8">
             <div>
               <div class="label mb-4 border-b border-line pb-2">Education</div>
@@ -460,10 +453,22 @@
       'linear-gradient(135deg,#f0dcd0,#d0a6a0)',
     ];
 
+    /* ---------- 프로젝트별 이미지 파일명 (번호 대신 이름) ---------- */
+    const IMG = {
+      '01': 'sedaily',   // en.sedaily.com
+      '02': 'aikey',     // AI KEY
+      '03': 'cardnews',  // AI 카드뉴스 CMS
+      '04': 'nexus',     // AI NEXUS
+      '05': 'hover',     // Hover AI (이미지 없으면 그라데이션)
+      '06': 'football',  // 축구 분석 (이미지 없으면 그라데이션)
+      '07': 'fashion',   // Fashion Jiok
+    };
+    const imgPath = (no) => `assets/${IMG[no] || no}.jpg`;
+
     /* ---------- WORK 인덱스 리스트 렌더 ---------- */
     const workList = document.getElementById('work-list');
     workList.innerHTML = PROJECTS.map((p, i) => `
-      <li class="work-row reveal border-b border-line cursor-pointer" data-index="${i}" data-thumb="${THUMBS[i % THUMBS.length]}" data-img="assets/${p.no}.jpg">
+      <li class="work-row reveal border-b border-line cursor-pointer" data-index="${i}" data-thumb="${THUMBS[i % THUMBS.length]}" data-img="${imgPath(p.no)}">
         <div class="flex items-center gap-6 py-7 md:py-10">
           <span class="wr-num label w-10 shrink-0">${p.no}</span>
           <div class="flex-1 min-w-0">
@@ -547,8 +552,11 @@
           <h2 class="font-display font-300 text-4xl md:text-6xl tracking-[0.04em] text-ink">${p.title}</h2>
           <p class="font-kr text-lg text-ash mt-3">${p.kr}</p>
           ${awardHtml}
-          <!-- IMAGE PLACEHOLDER: 추후 assets/${p.no}.jpg 로 교체 -->
-          <div class="my-12 aspect-[16/9] w-full bg-line/60 flex items-center justify-center label">IMAGE · ${p.title}</div>
+          <!-- 링크 스크린샷(assets/0N.jpg), 없으면 그라데이션+라벨 폴백 -->
+          <div class="my-12 relative aspect-[16/9] w-full overflow-hidden bg-line/60" style="background-image:${THUMBS[PROJECTS.indexOf(p) % THUMBS.length]}">
+            <span class="absolute inset-0 flex items-center justify-center label">${p.title}</span>
+            <img src="${imgPath(p.no)}" alt="${p.title}" class="relative w-full h-full object-cover" onerror="this.remove()" />
+          </div>
           <p class="font-kr text-lg md:text-xl leading-relaxed text-ink/90 max-w-3xl">${p.summary}</p>
           <div class="grid grid-cols-2 md:grid-cols-3 gap-6 my-12">${metricsHtml}</div>
           <h3 class="label mb-5">Role & Contribution</h3>
