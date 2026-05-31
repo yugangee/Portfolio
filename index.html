@@ -335,6 +335,8 @@
   <script>
   (() => {
     'use strict';
+    if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+    window.scrollTo(0, 0);
     gsap.registerPlugin(ScrollTrigger);
 
     /* ---------- 프로젝트 데이터 (포폴 MD 기준) ---------- */
@@ -832,7 +834,7 @@
       panel.setAttribute('aria-hidden', 'false');
       lenis.stop();
       gsap.to(panel, { y: '0%', duration: 0.7, ease: 'power3.out' });
-      panelBody.scrollTop = 0;
+      panel.scrollTop = 0;
       showNavBtns(true);
       panelBody.querySelectorAll('.count').forEach((el) => {
         const val = parseFloat(el.dataset.value);
