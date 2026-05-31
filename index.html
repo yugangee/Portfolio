@@ -333,7 +333,15 @@
         sections: [
           { title: '유입 국가 (지난 90일)', items: ['South Korea 9.3만', 'United States 8.1만', 'Singapore 2.3만', 'India 1.5만', 'China 1.3만', 'Japan 9.5천', 'United Kingdom 8.3천'] },
         ],
-        stack: '개발환경 Windows·AWS·VS Code · TypeScript·JavaScript·Python·HCL·CSS · 서버 AWS EC2·Lambda · Next.js·FastAPI·React·Tailwind · AWS(EC2·Lambda·S3·DynamoDB) · Claude Opus 4.5 · BigKinds API',
+        stack: [
+          ['개발 환경', 'Windows · AWS · VS Code'],
+          ['개발 언어', 'TypeScript · JavaScript · Python · HCL · CSS'],
+          ['서버', 'AWS EC2 · AWS Lambda'],
+          ['프레임워크', 'Next.js · FastAPI · React · Tailwind CSS'],
+          ['Infrastructure', 'AWS (EC2 · Lambda · S3 · DynamoDB)'],
+          ['IDE', 'VS Code · Claude Code · Git'],
+          ['AI & Data', 'Anthropic Claude Opus 4.5 · BigKinds API'],
+        ],
         link: 'https://en.sedaily.com',
       },
       {
@@ -361,7 +369,15 @@
           '99.9% 데이터 가용성 확보 — 추출 시점과 공시일을 구분하는 데이터 정책 설계',
           '102개 집단·85개+ 계열사 전체 지형을 보여주는 투자자용 인텔리전스 플랫폼 완성',
         ],
-        stack: 'TypeScript(Next.js·React)·Python(AWS Lambda) · Next.js 14(App Router·SSR) · DynamoDB·ElasticSearch(전문 검색)·Redis(캐시) · AWS(Lambda·API Gateway·EC2·CloudFront·S3) · DART·KFTC·BigKINDS·Yahoo Finance·Naver Securities · NextAuth(Google OAuth) · Claude Opus 4.8 (AWS Bedrock)',
+        stack: [
+          ['개발 언어', 'TypeScript (Next.js · React) · Python (AWS Lambda)'],
+          ['프레임워크', 'Next.js 14 (App Router · SSR)'],
+          ['데이터베이스', 'DynamoDB · ElasticSearch (전문 검색) · Redis (캐시)'],
+          ['클라우드 인프라', 'AWS Lambda · API Gateway · EC2 · CloudFront · S3'],
+          ['외부 데이터', 'DART · KFTC · BigKINDS · Yahoo Finance · Naver Securities'],
+          ['인증', 'NextAuth (Google OAuth)'],
+          ['AI', 'Anthropic Claude Opus 4.8 (AWS Bedrock)'],
+        ],
         link: 'https://en.sedaily.com/key',
       },
       {
@@ -388,7 +404,14 @@
           '데이터 수집→비주얼 제작→카피라이팅 전 과정 자동화로 수작업 시간 90% 이상 단축',
           '자동화 시스템을 활용해 패션·뷰티 매거진 인스타그램 채널 직접 운영',
         ],
-        stack: 'TypeScript(Next.js·React·Node.js) · Next.js 15(App Router·SSR)·React 19·SST·OpenNext · DynamoDB · AWS(Lambda·CloudFront·S3·Bedrock·IAM) · Claude Opus 4.8/Sonnet 4.6(Bedrock)·Gemini TTS · satori·resvg·sharp',
+        stack: [
+          ['개발 언어', 'TypeScript (Next.js · React · Node.js)'],
+          ['프레임워크', 'Next.js 15 (App Router · SSR) · React 19 · SST · OpenNext'],
+          ['데이터베이스', 'DynamoDB'],
+          ['클라우드 인프라', 'AWS Lambda · CloudFront · S3 · Bedrock · IAM'],
+          ['AI', 'Anthropic Claude Opus 4.8 / Sonnet 4.6 (Bedrock) · Google Gemini TTS'],
+          ['렌더링', 'satori · resvg · sharp'],
+        ],
         link: 'https://www.instagram.com/look.edits.mag/',
       },
       {
@@ -411,7 +434,15 @@
           '폭발적인 시스템 활용량 (High Engagement) — 누적 입력 토큰 1.1억 (110,216,844)',
           'B2B 솔루션 확장 — 타 언론사·미디어 그룹 대상 구독형 AI 솔루션 판매 전략 수립·추진',
         ],
-        stack: 'Git·AWS CLI·Serverless Framework · JavaScript·CSS·Python·Node.js·JSON · AWS Lambda·CloudFront·S3 · React·Vite·Tailwind · AWS·DynamoDB·Cognito · Claude Opus 4.5 · Web Search Integration',
+        stack: [
+          ['개발 환경', 'Git · AWS CLI · Serverless Framework'],
+          ['개발 언어', 'JavaScript · CSS · Python · Node.js · JSON'],
+          ['서버', 'AWS Lambda · CloudFront · S3'],
+          ['프레임워크', 'React · Vite · Tailwind CSS · Serverless Framework'],
+          ['Infrastructure', 'AWS · DynamoDB · AWS Cognito'],
+          ['IDE', 'Visual Studio Code'],
+          ['AI & Data', 'Anthropic Claude Opus 4.5 · Web Search Integration'],
+        ],
         link: '',
       },
       {
@@ -439,7 +470,13 @@
         achievements: [
           'SK AI SUMMIT 2025 부스에서 삼성·SK그룹 등 글로벌 VIP 대상 시연으로 시장성 검증',
         ],
-        stack: 'Python · YOLO11·PyTorch·OpenCV·Roboflow·Ultralytics·EasyOCR·TTS API · Google Colab(T4)·NVIDIA RTX 4090 · Hugging Face Spaces',
+        stack: [
+          ['개발 언어', 'Python'],
+          ['하드웨어', 'Google Colab (T4 GPU) · NVIDIA RTX 4090 GPU'],
+          ['모델 학습/관리', 'Google Colab · VS Code · Roboflow (YOLO 학습)'],
+          ['배포 플랫폼', 'Hugging Face Spaces'],
+          ['라이브러리', 'YOLO11 · PyTorch · OpenCV · Roboflow · Ultralytics · EasyOCR · TTS API'],
+        ],
         link: 'https://huggingface.co/spaces/yugangee/Hover_AI',
       },
       {
@@ -462,7 +499,14 @@
           { title: 'Computer Vision', items: ['객체 탐지 — YOLOv8(Ultralytics)로 선수·공·심판 클래스 단위 탐지', '객체 추적 — DeepSORT로 ID 지속성 유지, 프레임 간 연속 추적', '팀 구분 — K-Means 색상 군집화로 팀 자동 분류', '공 소유자 판별 — 공 중심과 선수 bbox 중심 간 유클리드 거리로 최근접 선수 판별'] },
           { title: 'RAG 기반 자막 생성', items: ['국가대표 경기 해설 스크립트 확보·전처리 (중복/메타데이터 제거)', 'BM25(키워드) + FAISS(Sentence-BERT 의미검색) 하이브리드 검색', '두 결과를 가중치 α=0.6으로 결합해 Top-N 후보 확보 → OpenAI API로 자연스러운 해설 자막 생성'] },
         ],
-        stack: 'Python·JavaScript(React) · FastAPI+Uvicorn · YOLOv8·OpenCV·DeepSORT·Sentence-BERT·BM25·FAISS·Roboflow·Ultralytics·Pandas·Scikit-learn · Hugging Face Spaces · GitHub(BallStalker)',
+        stack: [
+          ['개발 언어', 'Python · JavaScript (React)'],
+          ['프레임워크', 'FastAPI + Uvicorn (ASGI 서버)'],
+          ['버전 관리·협업', 'Git · GitHub (BallStalker)'],
+          ['모델 학습/관리', 'Google Colab · VS Code · Jupyter Notebook · Roboflow'],
+          ['배포 플랫폼', 'Hugging Face Spaces'],
+          ['라이브러리', 'YOLOv8 · OpenCV · DeepSORT · Sentence-BERT · BM25 · FAISS · Roboflow · Ultralytics · Pandas · Scikit-learn'],
+        ],
         link: 'https://huggingface.co/spaces/yugangee/football_analysis',
       },
       {
@@ -494,7 +538,15 @@
             ['전체 정확도', '—', '—', '0.78', '930'],
           ],
         },
-        stack: 'JavaScript(Node.js·React Native/Expo)·Python · Express.js·Sequelize · MySQL · Gemini·EfficientNet·CLIP·PyTorch·YOLOv8 · NVIDIA RTX 4090 · GitHub·Notion',
+        stack: [
+          ['개발 언어', 'JavaScript (Node.js · React Native) · Python'],
+          ['프레임워크', 'React Native (Expo) · Express.js · Sequelize'],
+          ['데이터베이스', 'MySQL'],
+          ['모델 학습', 'NVIDIA RTX 4090 GPU'],
+          ['버전 관리·협업', 'GitHub · Notion'],
+          ['AI', 'google-generativeai · EfficientNet · CLIP'],
+          ['라이브러리', 'PyTorch · YOLOv8'],
+        ],
         link: 'https://github.com/Fashion-Jiok/fashion-jiok',
       },
     ];
@@ -630,6 +682,9 @@
             <tbody>${p.table.rows.map((r) => `<tr class="border-b border-line">${r.map((c, i) => `<td class="py-2 pr-4 ${i === 0 ? 'text-ink' : 'text-ash text-right'}">${c}</td>`).join('')}</tr>`).join('')}</tbody>
           </table>
         </div>` : '';
+      const stackHtml = Array.isArray(p.stack)
+        ? `<div class="divide-y divide-line">${p.stack.map(([c, i]) => `<div class="grid grid-cols-1 sm:grid-cols-4 gap-1 sm:gap-4 py-3"><div class="label sm:col-span-1">${c}</div><div class="font-kr text-sm text-ink/80 sm:col-span-3 leading-relaxed">${i}</div></div>`).join('')}</div>`
+        : `<p class="font-kr text-sm text-ash leading-relaxed">${p.stack}</p>`;
       return `
         <div class="max-w-5xl mx-auto">
           <div class="label mb-4">${p.no} / ${p.year}</div>
@@ -650,8 +705,8 @@
           ${achievementsHtml}
           ${sectionsHtml}
           ${tableHtml}
-          <h3 class="label mb-3">Tech Stack</h3>
-          <p class="font-kr text-sm text-ash leading-relaxed">${p.stack}</p>
+          <h3 class="label mb-4">Tech Stack</h3>
+          ${stackHtml}
         </div>`;
     }
 
