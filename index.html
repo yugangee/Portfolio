@@ -722,7 +722,12 @@
           <div class="label mt-2">${m.label}</div>
         </div>`).join('');
       const awardHtml = p.award ? `<div class="inline-block label px-4 py-2 mt-4 rounded-sm" style="color:#B8860B;border:1px solid rgba(184,134,11,0.4);background:rgba(184,134,11,0.06);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);">★ ${p.award}</div>` : '';
-      const linkA = (label, url) => `<a href="${url}" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-sm tracking-[0.2em] uppercase font-display border-b border-ink pb-1 hover:opacity-60">${label} ↗</a>`;
+      const linkA = (label, url) => {
+        const strong = /aws|tech blog|award/i.test(label);
+        return strong
+          ? `<a href="${url}" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-sm tracking-[0.2em] uppercase font-display px-4 py-2 rounded-sm bg-ink text-snow hover:bg-ink/85 transition-colors">${label} ↗</a>`
+          : `<a href="${url}" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-sm tracking-[0.2em] uppercase font-display border-b border-ink pb-1 hover:opacity-60">${label} ↗</a>`;
+      };
       const linkHtml = p.links ? p.links.map(l => linkA(l.label, l.url)).join('') : (p.link ? linkA('View Live', p.link) : '');
       const meta = [['Period', p.period], ['Team', p.team], ['Role', p.role]].filter(([, v]) => v && v !== '—');
       const metaHtml = meta.map(([k, v]) => `<div><div class="label mb-1">${k}</div><div class="font-kr text-ink text-sm leading-snug">${v}</div></div>`).join('');
@@ -803,6 +808,27 @@
             </div>`;
           }
           imgIdx++;
+          if (isSedaily && i === 0) {
+            return `
+              <div class="mb-10 max-w-3xl">${c}</div>
+              <div class="mb-16">
+                <div class="flex items-center gap-4 mb-6">
+                  <span class="label text-ash">2025.12</span>
+                  <span class="h-px flex-1 bg-line"></span>
+                  <span class="label text-ink">Now</span>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 items-stretch">
+                  <figure class="relative bg-line/60 h-full">
+                    <div class="absolute top-3 left-3 z-10 px-3 py-1.5 text-xs uppercase tracking-[0.22em] text-ink" style="background:rgba(255,255,255,0.92);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid rgba(0,0,0,0.06)">2025.12 · Before</div>
+                    <img src="assets/sedaily-2025-12.png" alt="2025년 12월 초기 en.sedaily.com" loading="lazy" class="w-full h-full object-cover object-top block" />
+                  </figure>
+                  <figure class="relative bg-line/60 h-full">
+                    <div class="absolute top-3 left-3 z-10 px-3 py-1.5 text-xs uppercase tracking-[0.22em] text-ink" style="background:rgba(255,255,255,0.92);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid rgba(0,0,0,0.06)">Now · After</div>
+                    <img src="assets/sedaily-now.png" alt="현재 en.sedaily.com" loading="lazy" class="w-full h-full object-cover object-top block" />
+                  </figure>
+                </div>
+              </div>`;
+          }
           if (isSedaily && isLast && p.imgCount >= 4) return stackRow(slot(imgIdx), c);
           const imgLeft = i % 2 === 0;
           const cols = narrowImg.includes(i)
